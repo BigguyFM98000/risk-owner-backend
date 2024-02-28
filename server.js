@@ -7,7 +7,7 @@ const RiskownerRoutes = require('./routes/risk_owner_routes');
 const PORT = process.env.PORT || 8090
 
 const app = express();
-const corsOptions = {origin: ["http://localhost:3000"]}
+const corsOptions = {origin: ["http://localhost:3000", "https://risk-owners-backend.onrender.com/"]}
 app.use(cors(corsOptions))
 // Two body-parser middlewares
 app.use(bodyParser.urlencoded({ extended: true }))
