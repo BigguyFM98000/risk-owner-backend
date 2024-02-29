@@ -16,7 +16,7 @@ app.use((req, res, next) => {
   next();
 });
 
-const corsOptions = {origin: ["https://risk-owners-frontend.vercel.app/"]}
+const corsOptions = {origin: ["https://risk-owners-frontend.vercel.app/"], methods: ['GET', 'POST', 'PUT', 'DELETE']}
 app.use(cors(corsOptions))
 
 // Two body-parser middlewares
