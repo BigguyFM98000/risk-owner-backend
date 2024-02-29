@@ -7,9 +7,6 @@ const RiskownerRoutes = require('./routes/risk_owner_routes');
 const PORT = process.env.PORT || 8090
 
 const app = express();
-const corsOptions = {origin: ["http://localhost:3000", "https://risk-owners-frontend.vercel.app/", "*"]}
-app.use(cors(corsOptions))
-
 // Enable CORS for all requests
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'https://risk-owners-frontend.vercel.app/');
@@ -18,6 +15,9 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   next();
 });
+
+const corsOptions = {origin: ["http://localhost:3000", "https://risk-owners-frontend.vercel.app/", "*"]}
+app.use(cors(corsOptions))
 
 // Two body-parser middlewares
 app.use(bodyParser.urlencoded({ extended: true }))
