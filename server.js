@@ -8,17 +8,15 @@ const PORT = process.env.PORT || 8090
 
 const app = express();
 // Enable CORS for all requests
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://risk-owners-frontend.vercel.app/');
-  // You can add more headers as needed
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', 'https://risk-owners-frontend.vercel.app/');
+//   // You can add more headers as needed
+//   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+//   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+//   next();
+// });
 
-const corsOptions = {origin: ["https://risk-owners-frontend.vercel.app/"], methods: ['GET', 'POST', 'PUT', 'DELETE']}
-app.use(cors(corsOptions))
-
+app.use(cors())
 // Two body-parser middlewares
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
